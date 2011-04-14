@@ -9,6 +9,9 @@ define('DB_HOST', 'localhost');     // 99% chance you won't need to change this 
 
 define('DEBUG', 3);
 
+define('FB_API_KEY', '');
+define('FB_SECRET', '');
+
 $config['name'] = 'Vote Swap Canada';
 $config['siteurl'] = 'http://voteswap.sharurl.com/voteswapcanada';
 $config['nobuffer'] = array();
