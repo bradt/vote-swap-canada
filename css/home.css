@@ -1,0 +1,35 @@
+form.file-upload {
+	width: 300px;
+	margin: 0 auto;
+}
+
+div.faq {
+	width: 500px;
+	margin: 100px auto 0 auto;
+	color: #333;
+	font-size: 0.9em;
+}
+
+div.faq h3 {
+	margin-top: 3em;
+}
+
+div.faq ol li {
+	margin-bottom: 0.5em;
+}
+
+div.faq ol li span.url {
+	font-weight: bold;
+	color: #666;
+}
+
+div.faq table th {
+	text-align: left;
+	padding-right: 20px;
+}
+
+div.faq table th span.desc {
+	font-size: 0.8em;
+	font-weight: normal;
+	display: block;
+}
