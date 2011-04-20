@@ -186,8 +186,9 @@ div.match-profile div.info p {
   margin: 0;
 }
 
-ul.related {
-	margin-bottom: 10px;
+.perm-email {
+	padding: 10px;
+	border: 1px solid #000;
 }
 </style>
 
@@ -219,6 +220,11 @@ $image = $images[$rand];
     <img src="<?php echo $image[0]; ?>" alt="" border="0" /></a>
 
   <h3>Welcome to Vote Swap Canada!</h3>
+
+	<fb:prompt-permission perms="email">
+		<b class="perm-email">You are not currently signed up for email notifications. Click here to
+		authorize us to send you email notifications.</b>
+	</fb:prompt-permission>
 
   <p>An app allowing you to connect with people across
   Canada who want to increase the effectiveness of their vote and minimize <a
@@ -266,6 +272,7 @@ $image = $images[$rand];
     <li><a href="http://www.elections.ca/" target="_blank">Elections Canada</a></li>
     <li><a href="http://www.votepair.ca/" target="_blank">Pair Vote</a></li>
     <li><a href="http://www.cbc.ca/news/politics/canadavotes2011/">CBC - Canada Votes 2011</a></li>
+	<li><a href="https://github.com/bradt/vote-swap-canada">Browse Source Code @ GitHub</a></li>
   </ul>
 </div>
 

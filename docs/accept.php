@@ -9,7 +9,7 @@ $match_user_id = $_GET['uid'];
 $sql = sprintf("SELECT * FROM users WHERE id = '%d'", $db->escape($match_user_id));
 $match = $db->select_one($sql);
 
-if (!$match || $match['match_user_id'] == $facebook->user) {
+if (!$match) {
   echo '<fb:redirect url="/voteswapcanada/matches/" />';
   exit;
 }
@@ -89,7 +89,7 @@ elseif ($request['request_status'] != 'requested') {
     <h2 class="first article-title">You've already responded to this request</h2>
     
     <p>
-      It appers you've already <?php echo $request['request_status']; ?> this request.
+      It appears you've already <?php echo $request['request_status']; ?> this request.
     </p>
     
     <?php
@@ -140,7 +140,8 @@ else {
     );
     $db->update('users', $fields, "id = '" . $match['id'] . "'");
 
-    $facebook->api_client->notifications_send($match['id'], 'has accepted your request to swap votes on <a href="http://apps.facebook.com/voteswapcanada/">Vote Swap Canada</a>.');
+    $facebook->api_client->notifications_sendEmail(array($facebook->user), 'Your Vote Swap Canada 2011 request has been accepted', '', '<fb:name linked="false" uid="' . $match['id'] . '" /> has accepted your request to swap votes on <a href="http://apps.facebook.com/voteswapcanada/">Vote Swap Canada</a>.');
+    // Deprecated by Facebook: $facebook->api_client->notifications_send($match['id'], 'has accepted your request to swap votes on <a href="http://apps.facebook.com/voteswapcanada/">Vote Swap Canada</a>.');
     //$facebook->api_client->feed_publishActionOfUser($match['id'], '<fb:name firstnameonly="true" uid="' . $match['id'] . '" /> has agreed to swap votes with <fb:name linked="false" uid="' . $facebook->user . '" /> on <a href="http://apps.facebook.com/voteswapcanada/">Vote Swap Canada</a>.', '');
     
     echo '<fb:redirect url="/voteswapcanada/status/" />';

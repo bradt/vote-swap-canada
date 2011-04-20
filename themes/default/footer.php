@@ -21,11 +21,14 @@
     <h3>Can I Trust You?</h3>
     
     <p>This is about making every vote count, not party politics. Vote Swap
-    Canada is non-partisan. We are not affiliated with any party.</p>
+    Canada is not affiliated with any party.</p>
     
     <p>Also, the beauty of Vote Swap Canada is that you don't have to trust
     us. You need to trust the person you match up with. It's up to you to
     chat with them and evaluate whether you trust them to swap votes with you.</p>
+    
+    <p>Further, Vote Swap Canada's code is open source and can be
+    <a href="https://github.com/bradt/vote-swap-canada">fully inspected at GitHub</a>.
   </div>
   
   <div class="col col-3">

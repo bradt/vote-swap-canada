@@ -37,7 +37,8 @@ if ($request['request_status'] == 'requested') {
   $db->update('users_requests', $fields, "user_id = '" . $match['id'] . "' AND request_user_id = '" . $facebook->user . "'");
 
   if ($match['is_installed']) {
-    $facebook->api_client->notifications_send($match['id'], 'has declined your request to swap votes on <a href="http://apps.facebook.com/voteswapcanada/">Vote Swap Canada</a>.');
+    $facebook->api_client->notifications_sendEmail(array($facebook->user), 'Your Vote Swap Canada 2011 request has been declined', '', '<fb:name linked="false" uid="' . $match['id'] . '" /> has declined your request to swap votes on <a href="http://apps.facebook.com/voteswapcanada/">Vote Swap Canada</a>.');
+    // Deprecated by Facebook: $facebook->api_client->notifications_send($match['id'], 'has declined your request to swap votes on <a href="http://apps.facebook.com/voteswapcanada/">Vote Swap Canada</a>.');
   }
   ?>
   
